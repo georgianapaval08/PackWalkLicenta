@@ -1,0 +1,103 @@
+﻿@model IEnumerable<PackWalkLicenta.Models.Rezervare>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+    <div style="text-align:center">
+        <h1 style="text-align:center">Listă de rezervări</h1>
+        <img src="~/Content/themes/base/images/pachettt.jpg" />
+    </div>
+
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Prenume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa_de_Ridicare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numarul_persoanei_care_trimite)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adresa_de_Predare)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numarul_persoanei_care_primeste)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cantitate_aproximativa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Data_Trimiterii)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Prenume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa_de_Ridicare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numarul_persoanei_care_trimite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa_de_Predare)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numarul_persoanei_care_primeste)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantitate_aproximativa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data_Trimiterii)
+            </td>
+            <td>
+                @Html.ActionLink("Șterge rezervarea", "Delete", new { id = item.RezervareId })|
+                @Html.ActionLink("Trimite mail de transmitere a orei", "SendEmail", new { id = item.RezervareId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<br />
+<table>
+    <tr>
+        <td>
+
+            @Html.ActionLink("Înapoi la meniul administratorului", "ViewAdmin", "Home") |
+
+            @Html.ActionLink("Ieșire din cont", "Logout", "Home")
+
+        </td>
+    </tr>
+</table>

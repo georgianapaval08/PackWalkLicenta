@@ -1,0 +1,23 @@
+﻿@model PackWalkLicenta.Models.User
+
+@{
+    ViewBag.Title = "ViewAdmin";
+}
+
+<h2 style="text-align:center">Bine ai revenit!</h2>
+
+<img style="margin-left:300px" src="~/Content/themes/base/images/admin.jpg" height="300" width="500" />
+
+<h3>
+    Pentru o vizualizare a listei de rezervări înregistrate pe site la acest moment, puteți accesa butonul alăturat &raquo;
+    @Html.ActionLink("Rezervări", "Index", "Rezervares")
+
+</h3>
+<h3>
+    Pentru o vizualizare a listei de utilizatori înregistrați pe site la acest moment, puteți accesa butonul alăturat &raquo;
+    @Html.ActionLink("Lista de utilizatori", "Index", "Users")
+</h3>
+
+<div style="text-align:right">
+    @Html.ActionLink("Înapoi la pagina principală", "Index", "Home")
+</div>

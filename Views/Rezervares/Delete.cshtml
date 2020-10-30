@@ -1,0 +1,74 @@
+﻿@model PackWalkLicenta.Models.Rezervare
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Șterge înregistrarea</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa_de_Ridicare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa_de_Ridicare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numarul_persoanei_care_trimite)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numarul_persoanei_care_trimite)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adresa_de_Predare)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adresa_de_Predare)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Numarul_persoanei_care_primeste)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Numarul_persoanei_care_primeste)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cantitate_aproximativa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cantitate_aproximativa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Data_Trimiterii)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Data_Trimiterii)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Șterge" class="btn btn-default" /> 
+          
+        </div>
+    }
+<div style="text-align:right"> 
+    @Html.ActionLink("Înapoi la lista de rezervări", "Index")
+</div>
+</div>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<img src="~/Content/themes/base/images/traseu.png" width="1140" height="400" style=" margin-top:10px"/>
+<div class="jumbotron" style='        background: #133135;
+        color: #46A3AF'>
+    <h2>Bine ați venit pe pagina noastră!</h2>
+    <h3>Ne numim PackWalk, ceea ce în traducere ar fi Plimbarea Pachetelor. Suntem o familie destul de mică, dar suntem dornici de a ne înmulți. Așadar, fie că ești părintele care, cu nerăbdare, își dorește să-i trimită un pachet copilului său, fie că ești chiar tu studentul care a rămas fără mâncare, fie că ești mătușa care trimite o prăjitură nepotului care învață toată ziua, ești cu siguranță clientul pe care noi îl căutăm și așteptăm.   </h3>
+    <h3>Suntem o firmă care ușurează procesul de livrare, respectiv primire a pachetelor studențești. Preluăm de la adresa specificată și expediem chiar la ușa căminului sau al apartamentului în care locuiește destinatarul. Orașul din care plecăm este Suceava, iar destinația finală este Cluj-Napoca. Așadar, preluăm pachete din localitățile care se află pe ruta noastră. După ce efectuați o rezervare, veți primi un mail prin care vă vom comunica ora la care vom ajunge pentru ridicarea coletului. </h3>
+    <p class="lead"></p>
+    <h3>Pentru a afla datele noastre de contact, precum și pagina de Facebook, puteți accesa pagina aferentă, prin apăsarea butonului alăturat &raquo; @Html.ActionLink("Contact","Contact", "Home") </h3>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>
+            Dacă sunteți pentru prima dată în vizită pe site-ul nostru, este nevoie să accesați butonul de înregistrare &raquo;
+            @Html.ActionLink("Înregistrare", "Register")
+        </h2>
+
+    </div>
+    <div class="col-md-6">
+        <h2>
+            Dacă deja sunteți deja înregistrat, puteți să vă accesați contul chiar aici &raquo;
+            @Html.ActionLink("Autentificare", "Login")
+        </h2>
+
+    </div>
+
+</div>

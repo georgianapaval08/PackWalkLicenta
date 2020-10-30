@@ -1,0 +1,74 @@
+﻿@model PackWalkLicenta.Models.ViewModels.EmailContent
+
+@{
+    ViewBag.Title = "SendEmail";
+}
+@section Scripts {
+
+    <script>
+        //functie care are ca rol dezactivarea sugestiilor
+        $(document).ready(function () {
+            $("input:text,form").attr("autocomplete", "off");
+        })
+    </script>
+
+}
+<div style="margin-left:100px">
+    <h2>Trimitere mail de notificare</h2>
+    <img src="~/Content/themes/base/images/inmanarea.jpg" />
+    <br />
+    <br />
+</div>
+@if (ViewBag.Error != null)
+{
+    <h2> @ViewBag.Error </h2>
+
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RezervareID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Destinatar, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Destinatar, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Destinatar, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Subiect, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Subiect, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Subiect, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Mesaj, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Mesaj, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Mesaj, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Trimite Email" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+

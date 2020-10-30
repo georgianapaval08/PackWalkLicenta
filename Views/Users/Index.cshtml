@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PackWalkLicenta.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <div style="text-align:center">
+        <h1>Listă de utilizatori</h1>
+        <img src="~/Content/themes/base/images/pachettt.jpg" />
+    </div>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prenume)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Prenume)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.ActionLink("Detalii", "Details", new { id = item.UserId }) |
+                @Html.ActionLink("Ștergere", "Delete", new { id = item.UserId })
+            </td>
+        </tr>
+    }
+
+</table>
+<br />
+<h4 style="text-align:right">
+    @Html.ActionLink("Creează un cont nou", "Create")
+</h4>
+<table>
+    <tr>
+        <td>
+            
+               @Html.ActionLink("Înapoi la meniul administratorului", "ViewAdmin", "Home") |
+            
+              @Html.ActionLink("Ieșire din cont", "Logout", "Home") 
+         
+        </td>
+    </tr>
+</table>
